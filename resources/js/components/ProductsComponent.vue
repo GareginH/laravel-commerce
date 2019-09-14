@@ -37,7 +37,7 @@
             }
         },
         mounted() {
-             axios.post('/vueShop', {Title:null}).then(response=>
+             axios.post('/latest').then(response=>
              {
                 this.products = response.data.data;
             })

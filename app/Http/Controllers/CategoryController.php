@@ -48,7 +48,7 @@ class CategoryController extends Controller
                 'name'=>$data['name'],
             ]);
         }
-        return view('product.index');
+        return redirect('admin/products');
     }
 
     /**
@@ -59,7 +59,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        $products = $category->product()->paginate(1);
+        $products = $category->product()->paginate(4);
         return response()->json($products);
     }
 

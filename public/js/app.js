@@ -11564,7 +11564,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -11584,38 +11583,23 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    filterProducts: function filterProducts() {
-      var _this2 = this;
-
-      axios.post('/vueShop', {
-        Title: this.Search
-      }).then(function (response) {
-        if (_this2.Search != "") {
-          _this2.categoryProducts = response.data.data;
-          _this2.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
-        } else {
-          _this2.categoryProducts = response.data.data;
-          _this2.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
-        }
-      });
-    },
     categorizeProducts: function categorizeProducts(id) {
-      var _this3 = this;
+      var _this2 = this;
 
       this.categoryProducts = [];
       axios.post('/category/' + id).then(function (response) {
-        _this3.categoryProducts = response.data.data;
-        _this3.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
+        _this2.categoryProducts = response.data.data;
+        _this2.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
       });
     },
     loadMoreCatProducts: function loadMoreCatProducts() {
-      var _this4 = this;
+      var _this3 = this;
 
       axios.post('/' + this.categoryNextPage).then(function (response) {
         response.data.data.forEach(function (element) {
-          _this4.categoryProducts.push(element);
+          _this3.categoryProducts.push(element);
         });
-        _this4.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
+        _this3.categoryNextPage = response.data.next_page_url ? response.data.next_page_url.split('http://commerce/')[1] : false;
       });
     }
   }
@@ -11889,9 +11873,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.post('/vueShop', {
-      Title: null
-    }).then(function (response) {
+    axios.post('/latest').then(function (response) {
       _this.products = response.data.data;
     });
   }
@@ -77108,41 +77090,6 @@ var render = function() {
     _c("div", { staticClass: "md-form mt-3 bg-color-white mb-5" }, [
       _c("h4", { staticClass: "text-uppercase color" }, [_vm._v("Categories")]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.Search,
-            expression: "Search"
-          }
-        ],
-        staticClass: "form-control col-2",
-        attrs: {
-          type: "text",
-          placeholder: "Search all products",
-          "aria-label": "Search"
-        },
-        domProps: { value: _vm.Search },
-        on: {
-          keyup: function($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.filterProducts()
-          },
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.Search = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
       _c(
         "div",
         { staticClass: "row dash-content pt-2" },
@@ -77183,31 +77130,27 @@ var render = function() {
                               { key: index, staticClass: "col-md-3" },
                               [
                                 _c("div", { staticClass: "product-card" }, [
-                                  _c(
-                                    "a",
-                                    { attrs: { href: "/shop/" + item.id } },
-                                    [
-                                      _c("div", {
-                                        staticClass: "product-card-img",
-                                        style: {
-                                          backgroundImage:
-                                            "url(" + item.Image + ")"
-                                        }
-                                      }),
-                                      _vm._v(" "),
-                                      _c(
-                                        "div",
-                                        { staticClass: "product-card-name" },
-                                        [
-                                          _vm._v(
-                                            "\n                                            " +
-                                              _vm._s(item.Title) +
-                                              "\n                                        "
-                                          )
-                                        ]
-                                      )
-                                    ]
-                                  ),
+                                  _c("a", { attrs: { href: "/" + item.id } }, [
+                                    _c("div", {
+                                      staticClass: "product-card-img",
+                                      style: {
+                                        backgroundImage:
+                                          "url(" + item.Image + ")"
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "product-card-name" },
+                                      [
+                                        _vm._v(
+                                          "\n                                            " +
+                                            _vm._s(item.Title) +
+                                            "\n                                        "
+                                        )
+                                      ]
+                                    )
+                                  ]),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -89921,7 +89864,8 @@ Vue.component('products-list', __webpack_require__(/*! ./components/ProductsComp
 Vue.component('category-products-list', __webpack_require__(/*! ./components/CategoryProductsComponent.vue */ "./resources/js/components/CategoryProductsComponent.vue")["default"]);
 Vue.component('category-delete-btn', __webpack_require__(/*! ./components/DeleteCategoryComponent.vue */ "./resources/js/components/DeleteCategoryComponent.vue")["default"]);
 Vue.component('checkout-page', __webpack_require__(/*! ./components/CheckoutComponent.vue */ "./resources/js/components/CheckoutComponent.vue")["default"]);
-Vue.component('image-carousel', __webpack_require__(/*! ./components/ImageCarouselComponent.vue */ "./resources/js/components/ImageCarouselComponent.vue")["default"]);
+Vue.component('image-carousel', __webpack_require__(/*! ./components/ImageCarouselComponent.vue */ "./resources/js/components/ImageCarouselComponent.vue")["default"]); //Vue.component('best-deal', require('./components/SalesBestDeal.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

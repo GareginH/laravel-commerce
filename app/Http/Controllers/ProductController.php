@@ -30,18 +30,17 @@ class ProductController extends Controller
         $products = Product::all();
         return view('shop.index', compact('products'));
     }
+
+    public function latestProducts(){
+        $products = Product::orderBy('created_at', 'desc')->simplePaginate(4);
+        return response()->json($products);
+    }
     public function vueShop(Request $request)
     {
         if($request->Title != null){
-            $products = Product::where('Title', 'Like', '%'.$request->Title.'%')->paginate(2);
+            $products = Product::where('Title', 'Like', '%'.$request->Title.'%')->simplePaginate(2);
             return response()->json($products);
         }
-        else if($request->Title == null)
-        {
-            $products = Product::where('Title', 'Like', '%'.$request->Title.'%')->orderBy('created_at', 'desc')->simplePaginate(4);
-            return response()->json($products);
-        }
-        
     }
     /**
      * Show the form for creating a new resource.
@@ -87,6 +86,7 @@ class ProductController extends Controller
             'quantity' => $data['quantity'],
             'image' => $path,
         ]);
+        return redirect('admin/products');
     }
 
     /**

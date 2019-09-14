@@ -14,6 +14,8 @@ Route::get('admin/', function () {
     return view('admin.index');
 });
 
+Auth::routes();
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/products/create', 'ProductController@create')->name('admin.product.create');
     Route::post('/admin/products', 'ProductController@store');
@@ -33,6 +35,7 @@ Route::get('/categories', function () {
 
 Route::get('/{product}', 'ProductController@show')->name('product.show');
 Route::post('/vueShop', 'ProductController@vueShop');
+Route::post('/latest', 'ProductController@latestProducts');
 
 Route::post('/cart/{product}', 'CartController@store');
 Route::delete('/cart/{product}', 'CartController@destroy');
@@ -43,7 +46,6 @@ Route::post('/checkout', 'CheckoutController@checkout');
 
 Route::post('/categories', 'CategoryController@index');
 Route::post('/category/{category}', 'CategoryController@show');
-Auth::routes();
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

@@ -2,7 +2,6 @@
   <div>
     <div class="md-form mt-3 bg-color-white mb-5">
         <h4 class="text-uppercase color">Categories</h4>
-        <input class="form-control col-2" type="text" placeholder="Search all products" aria-label="Search" v-model="Search" @keyup.enter="filterProducts()">
         <div class="row dash-content pt-2">
             <b-tabs content-class="mt-3" class="col-lg-12" active-nav-item-class="font-weight-bold text-uppercase text-main">
                  <div v-for="(item, index) in categories" :key="index">
@@ -10,7 +9,7 @@
                          <div class="row dash-content pt-1">
                             <div v-for="(item, index) in categoryProducts" :key="index" class="col-md-3">
                                     <div class="product-card">
-                                        <a :href="'/shop/' + item.id">
+                                        <a :href="'/' + item.id">
                                         <div class="product-card-img" v-bind:style="{ backgroundImage: 'url(' + item.Image + ')' }">
                                 
                                         </div>
@@ -26,7 +25,7 @@
                             </div>
                         </div>
                     </b-tab>
-                </div>
+                    </div>
                 <b-button variant="main" class="mt-4" v-on:click="loadMoreCatProducts()" v-if="categoryNextPage">More</b-button>
             </b-tabs>
         </div>
@@ -53,20 +52,6 @@
             })
         },
         methods:{
-            filterProducts(){
-                axios.post('/vueShop', {Title:this.Search}).then(response=>
-                {
-                    if(this.Search != ""){
-                        this.categoryProducts = response.data.data;
-                        this.categoryNextPage = (response.data.next_page_url)?(response.data.next_page_url).split('http://commerce/')[1]:false;
-                    }
-                    else{
-                        this.categoryProducts = response.data.data;
-                        this.categoryNextPage = (response.data.next_page_url)?(response.data.next_page_url).split('http://commerce/')[1]:false;
-                    }
-
-                })
-            },
             categorizeProducts(id){
                 this.categoryProducts = [];
                 axios.post('/category/'+id).then(response=>

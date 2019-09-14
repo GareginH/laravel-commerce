@@ -39,6 +39,7 @@ Vue.component('category-products-list', require('./components/CategoryProductsCo
 Vue.component('category-delete-btn', require('./components/DeleteCategoryComponent.vue').default);
 Vue.component('checkout-page', require('./components/CheckoutComponent.vue').default);
 Vue.component('image-carousel', require('./components/ImageCarouselComponent.vue').default);
+//Vue.component('best-deal', require('./components/SalesBestDeal.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
