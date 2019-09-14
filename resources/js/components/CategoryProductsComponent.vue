@@ -9,7 +9,7 @@
                          <div class="row dash-content pt-1">
                             <div v-for="(item, index) in categoryProducts" :key="index" class="col-md-3">
                                     <div class="product-card">
-                                        <a :href="'/' + item.id">
+                                        <a :href="'/shop/' + item.id">
                                         <div class="product-card-img" v-bind:style="{ backgroundImage: 'url(' + item.Image + ')' }">
                                 
                                         </div>

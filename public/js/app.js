@@ -77130,27 +77130,31 @@ var render = function() {
                               { key: index, staticClass: "col-md-3" },
                               [
                                 _c("div", { staticClass: "product-card" }, [
-                                  _c("a", { attrs: { href: "/" + item.id } }, [
-                                    _c("div", {
-                                      staticClass: "product-card-img",
-                                      style: {
-                                        backgroundImage:
-                                          "url(" + item.Image + ")"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "product-card-name" },
-                                      [
-                                        _vm._v(
-                                          "\n                                            " +
-                                            _vm._s(item.Title) +
-                                            "\n                                        "
-                                        )
-                                      ]
-                                    )
-                                  ]),
+                                  _c(
+                                    "a",
+                                    { attrs: { href: "/shop/" + item.id } },
+                                    [
+                                      _c("div", {
+                                        staticClass: "product-card-img",
+                                        style: {
+                                          backgroundImage:
+                                            "url(" + item.Image + ")"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        { staticClass: "product-card-name" },
+                                        [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(item.Title) +
+                                              "\n                                        "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  ),
                                   _vm._v(" "),
                                   _c(
                                     "div",
@@ -77580,7 +77584,7 @@ var render = function() {
           _vm._l(_vm.products, function(item, index) {
             return _c("div", { key: index, staticClass: "col-md-3" }, [
               _c("div", { staticClass: "product-card" }, [
-                _c("a", { attrs: { href: "/" + item.id } }, [
+                _c("a", { attrs: { href: "/shop/" + item.id } }, [
                   _c("div", {
                     staticClass: "product-card-img",
                     style: { backgroundImage: "url(" + item.Image + ")" }

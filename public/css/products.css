@@ -17,6 +17,7 @@ input{
   box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);
 }
 .product-card-name{
+  font-size: 9px;
   color: #8d6a9f;
   width: 100%;
   text-align: center;
