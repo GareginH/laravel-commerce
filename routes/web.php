@@ -12,7 +12,7 @@
 */
 Route::get('admin/', function () {
     return view('admin.index');
-})->name('admin.dashboard')->middleware('auth');
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/products/create', 'ProductController@create')->name('admin.product.create');
@@ -43,6 +43,7 @@ Route::post('/checkout', 'CheckoutController@checkout');
 
 Route::post('/categories', 'CategoryController@index');
 Route::post('/category/{category}', 'CategoryController@show');
+Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
