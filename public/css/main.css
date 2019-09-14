@@ -1,0 +1,20 @@
+body{
+    background: #f2f2f2!important;
+}
+.paralax-carousel{
+    min-height: 100%;
+    position: relative;
+    opacity: 1;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.btn-main{
+    color: #8d6a9f;
+    border: #8d6a9f 1px solid;
+}
+.btn-main:hover{
+    color: #eee;
+    background: #8d6a9f;
+}

@@ -1,0 +1,22 @@
+/* Sidebar */
+body{
+  background: #eee;
+}
+.sidebar{
+  height: 100vh;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+}
+.admin-nav{
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+}
+.sidebar-list > li{
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.dash-content{
+  margin: 0 auto;
+}
