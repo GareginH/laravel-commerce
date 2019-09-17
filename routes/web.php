@@ -33,6 +33,8 @@ Route::get('/categories', function () {
     return view('shop.categories');
 })->name('shop.categories');
 
+Route::get('/profile', 'ProfileController@index')->name('profile.index');
+
 Route::get('/shop/{product}', 'ProductController@show')->name('product.show');
 Route::post('/vueShop', 'ProductController@vueShop');
 Route::post('/latest', 'ProductController@latestProducts');

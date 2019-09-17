@@ -34,8 +34,11 @@
                         <a class="nav-link" href="{{route('shop.categories')}}">Categories</a>
                       </li>
                   </div>
-
-                  <li class="nav-item float-right">
+                  
+                  <li class="nav-item float-right d-flex">
+                    <a href="{{route('profile.index')}}" class="mr-3" style="font-size:22px">
+                      @fa('user')
+                    </a>
                     <cart-modal></cart-modal>
                   </li>
                 </ul>

@@ -30,12 +30,10 @@
 </script>
 <style scoped>
 .btn-main{
-    height: max-content;
     color: #8d6a9f;
     border: #8d6a9f 1px solid;
 }
 .btn-main:hover{
-    height: max-content;
     color: #eee;
     background: #8d6a9f;
 }

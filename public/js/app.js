@@ -44432,7 +44432,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "body{\r\n    background: #f2f2f2!important;\r\n}\r\n.paralax-carousel{\r\n    min-height: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    background-attachment: fixed;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n.btn-main{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\r\n}\r\n.btn-main:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\r\n}", ""]);
+exports.push([module.i, "body{\r\n    background: #f2f2f2!important;\r\n}\r\n.paralax-carousel{\r\n    min-height: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    background-attachment: fixed;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n.btn-main{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\r\n}\r\n.btn-main:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\r\n}\r\n.bg-color-white{\r\n    background: #ffffff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\r\n}", ""]);
 
 // exports
 
@@ -44451,7 +44451,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-main[data-v-600e081a]{\n    height: -webkit-max-content;\n    height: -moz-max-content;\n    height: max-content;\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-600e081a]:hover{\n    height: -webkit-max-content;\n    height: -moz-max-content;\n    height: max-content;\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
+exports.push([module.i, "\n.btn-main[data-v-600e081a]{\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-600e081a]:hover{\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
 
 // exports
 
@@ -44508,7 +44508,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-main[data-v-4d0dd899]{\n    height: -webkit-max-content;\n    height: -moz-max-content;\n    height: max-content;\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-4d0dd899]:hover{\n    height: -webkit-max-content;\n    height: -moz-max-content;\n    height: max-content;\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
+exports.push([module.i, "\n.btn-main[data-v-4d0dd899]{\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-4d0dd899]:hover{\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
 
 // exports
 
@@ -44546,7 +44546,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.color[data-v-5ecce49e]{\r\n    color:  #8d6a9f;\n}\n.text-main[data-v-5ecce49e]{\r\n    color:  #8d6a9f;\n}\na[data-v-5ecce49e]{\r\n    text-decoration: none;\n}\n.btn-main[data-v-5ecce49e]{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\r\n    height: -webkit-max-content;\r\n    height: -moz-max-content;\r\n    height: max-content;\n}\n.btn-main[data-v-5ecce49e]:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\n}\n.bg-color-white[data-v-5ecce49e]{\r\n    background: #ffffff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\n}\n.shadow-dark[data-v-5ecce49e]{\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\n}\r\n", ""]);
+exports.push([module.i, "\n.color[data-v-5ecce49e]{\r\n    color:  #8d6a9f;\n}\n.text-main[data-v-5ecce49e]{\r\n    color:  #8d6a9f;\n}\na[data-v-5ecce49e]{\r\n    text-decoration: none;\n}\n.btn-main[data-v-5ecce49e]{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-5ecce49e]:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\n}\n.bg-color-white[data-v-5ecce49e]{\r\n    background: #ffffff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\n}\n.shadow-dark[data-v-5ecce49e]{\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\n}\r\n", ""]);
 
 // exports
 

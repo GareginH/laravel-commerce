@@ -18,3 +18,9 @@ body{
     color: #eee;
     background: #8d6a9f;
 }
+.bg-color-white{
+    background: #ffffff;
+    padding: 5%;
+    padding-top: 2%;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);
+}

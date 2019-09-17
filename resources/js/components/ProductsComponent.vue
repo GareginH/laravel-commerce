@@ -57,7 +57,6 @@ a{
 .btn-main{
     color: #8d6a9f;
     border: #8d6a9f 1px solid;
-    height: max-content;
 }
 .btn-main:hover{
     color: #eee;
