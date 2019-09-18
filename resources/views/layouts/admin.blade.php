@@ -40,7 +40,7 @@
       <div class="col-2 sidebar navbar-expand-lg navbar-dark" style="background-color: #8d6a9f;">
         <ul class="list-unstyled sidebar-list">
           <li>
-            <a href="{{route('admin.products')}}" class="btn btn-outline-light col">Dashboard</a>
+            <a href="{{route('admin.dashboard')}}" class="btn btn-outline-light col">Dashboard</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle btn btn-outline-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

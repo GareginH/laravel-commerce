@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Profile;
+use App\Roles;
 use Illuminate\Http\Request;
 
-class ProfileController extends Controller
+class RolesController extends Controller
 {
-        /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,16 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profile = auth()->user()->profile;            
-        if($profile == null){
-            return abort(404);
-        }
-        $orders = $profile->orders()->get()->sortByDesc('created_at');
-        $total = 0;
-        foreach ($orders as $key => $value) {
-            $total+=$value->price * $value->quantity;
-        }
-        return view('profile.index', compact('orders', 'profile', 'total'));
+        //
     }
 
     /**
@@ -59,10 +41,10 @@ class ProfileController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show(Roles $roles)
     {
         //
     }
@@ -70,10 +52,10 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
+    public function edit(Roles $roles)
     {
         //
     }
@@ -82,10 +64,10 @@ class ProfileController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Profile  $profile
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, Roles $roles)
     {
         //
     }
@@ -93,10 +75,10 @@ class ProfileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Profile  $profile
+     * @param  \App\Roles  $roles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy(Roles $roles)
     {
         //
     }

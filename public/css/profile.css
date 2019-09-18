@@ -1,0 +1,14 @@
+
+.order-bg-color{
+    background-color: #8d6a9f;
+    color: #fff;
+    padding: 5%;
+    padding-top: 2%;
+    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);
+    height: 100%;
+}
+
+.order-list{
+    height: 200px;
+    overflow-y: scroll;
+}

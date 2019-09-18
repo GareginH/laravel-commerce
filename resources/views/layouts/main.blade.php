@@ -37,7 +37,9 @@
                   
                   <li class="nav-item float-right d-flex">
                     <a href="{{route('profile.index')}}" class="mr-3" style="font-size:22px; color:#fff; text-decoration:none;">
-                      @fa('user')
+                      <div class="btn btn-outline-light">
+                          @fas('user')
+                      </div>
                     </a>
                     <cart-modal></cart-modal>
                   </li>

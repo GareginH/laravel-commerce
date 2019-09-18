@@ -10,13 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('admin/', function () {
-    return view('admin.index');
-});
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('admin/', 'AdminController@index')->name('admin.dashboard');
+    
     Route::get('/admin/products/create', 'ProductController@create')->name('admin.product.create');
     Route::post('/admin/products', 'ProductController@store');
     Route::get('/admin/products', 'ProductController@index')->name('admin.products');

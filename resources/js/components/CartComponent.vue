@@ -39,12 +39,18 @@
             }
         },
         mounted() {
-            
+            axios.post('/cart').then(response=>{
+                if(response.data == "Cart is empty"){
+                    this.products = [];
+                }
+                else{
+                    this.products = response.data;
+                }
+            })
         },
         methods:{
             getCart(){
                 axios.post('/cart').then(response=>{
-                    console.log();
                     if(response.data == "Cart is empty"){
                         this.products = [];
                     }
@@ -75,7 +81,7 @@
         width: 600px;
     }
     .modal-outline{
-        border: 1px solid #8d6a9f;
+        border: 2px solid #eee;
         color: #eee;
         background: #8d6a9f;
         border-radius: 0 0 25px 25px;

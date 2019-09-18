@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+    protected $fillable = ['bonus',];
     public function orders(){
         return $this->hasMany(Order::class);
     }

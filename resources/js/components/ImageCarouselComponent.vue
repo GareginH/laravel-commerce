@@ -42,6 +42,6 @@
 </script>
 <style>
 #carousel-fade img{
-  height: 600px!important;
+  height: 400px!important;
 }
 </style>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\DB;
 use Closure;
 
 class IsAdmin
@@ -15,11 +16,13 @@ class IsAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(auth()->user()){
+        $admin = DB::table('roles_user')->where('user_id', auth()->user()->id)->get();
+
+        if(count($admin) > 0){
             return $next($request);
         }
         else{
-            return abort(404);
+            return abort(403);
         }
         
     }

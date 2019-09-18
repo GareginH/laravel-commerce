@@ -11489,31 +11489,39 @@ __webpack_require__.r(__webpack_exports__);
       modal: false
     };
   },
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.post('/cart').then(function (response) {
+      if (response.data == "Cart is empty") {
+        _this.products = [];
+      } else {
+        _this.products = response.data;
+      }
+    });
+  },
   methods: {
     getCart: function getCart() {
-      var _this = this;
+      var _this2 = this;
 
       axios.post('/cart').then(function (response) {
-        console.log();
-
         if (response.data == "Cart is empty") {
-          _this.products = [];
+          _this2.products = [];
         } else {
-          _this.products = response.data;
+          _this2.products = response.data;
         }
       });
       this.modal = !this.modal;
     },
     removeItem: function removeItem(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios["delete"]('/cart/' + id, {
         itemId: id
       }).then(function (response) {
-        _this2.modal = false;
+        _this3.modal = false;
 
-        _this2.getCart();
+        _this3.getCart();
       });
     }
   }
@@ -44429,10 +44437,29 @@ exports.push([module.i, "/*!\n * Bootstrap v4.3.1 (https://getbootstrap.com/)\n 
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
+exports.i(__webpack_require__(/*! -!../../node_modules/css-loader??ref--6-1!../../node_modules/postcss-loader/src??ref--6-2!./profile.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./public/css/profile.css"), "");
+
+// module
+exports.push([module.i, "body{\r\n    background: #f2f2f2!important;\r\n}\r\n.paralax-carousel{\r\n    min-height: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    background-attachment: fixed;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n.btn-main{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\r\n}\r\n.btn-main:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\r\n}\r\n.bg-color-white{\r\n    background: #ffffff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\r\n    height: 100%;\r\n    min-height: 120px;\r\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./public/css/profile.css":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./public/css/profile.css ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
 
 
 // module
-exports.push([module.i, "body{\r\n    background: #f2f2f2!important;\r\n}\r\n.paralax-carousel{\r\n    min-height: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    background-attachment: fixed;\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n}\r\n.btn-main{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\r\n}\r\n.btn-main:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\r\n}\r\n.bg-color-white{\r\n    background: #ffffff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\r\n}", ""]);
+exports.push([module.i, "\r\n.order-bg-color{\r\n    background-color: #8d6a9f;\r\n    color: #fff;\r\n    padding: 5%;\r\n    padding-top: 2%;\r\n    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.35);\r\n    height: 100%;\r\n}\r\n\r\n.order-list{\r\n    height: 200px;\r\n    overflow-y: scroll;\r\n}", ""]);
 
 // exports
 
@@ -44451,7 +44478,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-main[data-v-600e081a]{\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-600e081a]:hover{\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
+exports.push([module.i, "\n.btn-main[data-v-600e081a]{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-600e081a]:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\n}\r\n", ""]);
 
 // exports
 
@@ -44470,7 +44497,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.modal-position[data-v-e7ab8a3c]{\n    position: absolute;\n    right: 0;\n    top: 135%;\n    z-index: 999;\n}\n.modal-table-width[data-v-e7ab8a3c]{\n    width: 600px;\n}\n.modal-outline[data-v-e7ab8a3c]{\n    border: 1px solid #8d6a9f;\n    color: #eee;\n    background: #8d6a9f;\n    border-radius: 0 0 25px 25px;\n}\n", ""]);
+exports.push([module.i, "\n.modal-position[data-v-e7ab8a3c]{\n    position: absolute;\n    right: 0;\n    top: 135%;\n    z-index: 999;\n}\n.modal-table-width[data-v-e7ab8a3c]{\n    width: 600px;\n}\n.modal-outline[data-v-e7ab8a3c]{\n    border: 2px solid #eee;\n    color: #eee;\n    background: #8d6a9f;\n    border-radius: 0 0 25px 25px;\n}\n", ""]);
 
 // exports
 
@@ -44508,7 +44535,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.btn-main[data-v-4d0dd899]{\n    color: #8d6a9f;\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-4d0dd899]:hover{\n    color: #eee;\n    background: #8d6a9f;\n}\n", ""]);
+exports.push([module.i, "\n.btn-main[data-v-4d0dd899]{\r\n    color: #8d6a9f;\r\n    border: #8d6a9f 1px solid;\n}\n.btn-main[data-v-4d0dd899]:hover{\r\n    color: #eee;\r\n    background: #8d6a9f;\n}\r\n", ""]);
 
 // exports
 
@@ -44527,7 +44554,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#carousel-fade img{\n  height: 600px!important;\n}\n", ""]);
+exports.push([module.i, "\n#carousel-fade img{\n  height: 400px!important;\n}\n", ""]);
 
 // exports
 
