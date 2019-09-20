@@ -12,10 +12,12 @@ class AdminController extends Controller
         $itemsSold = Order::sum('quantity');
         $total = 0;
         $orders = Order::all();
+        
         $customers = User::count();
         foreach ($orders as $key => $value) {
             $total+=$value->price * $value->quantity;
         }
-        return view('admin.index', compact('total', 'itemsSold', 'customers'));
+        $orders= $orders->sortByDesc('created_at');
+        return view('admin.index', compact('total', 'itemsSold', 'customers', 'orders'));
     }
 }
