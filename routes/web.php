@@ -49,4 +49,3 @@ Route::post('/categories', 'CategoryController@index');
 Route::post('/category/{category}', 'CategoryController@show');
 
 Route::get('/home', 'HomeController@index')->name('home');
-

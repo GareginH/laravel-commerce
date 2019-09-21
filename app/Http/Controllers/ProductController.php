@@ -129,7 +129,6 @@ class ProductController extends Controller
             'quantity' => 'required',
             'image'=>['required', 'image', 'max:2000'],
         ]);
-        //$prod = Category::where('name', $data['category'])->first()->product->first();
         $rand = str_random(10);
         $name = $rand.$request->image->getClientOriginalName();
         $path = "storage/products/".$name;
@@ -140,13 +139,18 @@ class ProductController extends Controller
         $img->resize(600, 600);
         $img->insert($water, 'center');
         $img->save($path);
-        //$request->image->storeAs();
+
+        $nPath = "http://drive.google.com/uc?export=view&id=".$name;
+        
+        \Storage::cloud()->delete('https://drive.google.com/file/d/'.$name);
+        \Storage::cloud()->put($name, $img);
         $product->Title = $data['title'];
         $product->Description = $data['description'];
-        //$product->Category = $data['category'];
         $product->Price = $data['price'];
         $product->Quantity = $data['quantity'];
+        
         $product->Image = $path;
+        
         $product->save();
         return redirect('/admin/products');
     }
