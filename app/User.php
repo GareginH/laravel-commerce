@@ -45,7 +45,7 @@ class User extends Authenticatable
                 $user->profile()->create([
                     'bonus'=>1,
                 ]);
-                $user->roles()->toggle([1]);
+                //$user->roles()->toggle([1]);
             }
         );
     }
