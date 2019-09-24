@@ -140,10 +140,10 @@ class ProductController extends Controller
         $img->insert($water, 'center');
         $img->save($path);
 
-        $nPath = "http://drive.google.com/uc?export=view&id=".$name;
+        //$nPath = "http://drive.google.com/uc?export=view&id=".$name;
+        //\Storage::cloud()->delete('https://drive.google.com/file/d/'.$name);
+        //\Storage::cloud()->put($name, $img);
         
-        \Storage::cloud()->delete('https://drive.google.com/file/d/'.$name);
-        \Storage::cloud()->put($name, $img);
         $product->Title = $data['title'];
         $product->Description = $data['description'];
         $product->Price = $data['price'];
