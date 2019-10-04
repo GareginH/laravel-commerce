@@ -1,14 +1,15 @@
 @extends('layouts.admin')
 @section('content')
 <div class="col-8 dash-content">
-    <div class="container">
+    <category-delete-btn></category-delete-btn>
+    <div class="container mt-5">
             
-            <category-delete-btn></category-delete-btn>
+            
 
             <form action="/admin/category"  method="post" >
             @csrf
             <div class="row">
-                <h1>Add New Category</h1>
+                <h3>Add New Category</h3>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-form-label">Category Name</label>
@@ -27,7 +28,7 @@
             </div>
     
             <div class="row pt-4">
-                <button class="btn btn-outline-dark col">Add</button>
+                <button class="btn btn-main col">Add</button>
             </div>
         </form>
     </div>

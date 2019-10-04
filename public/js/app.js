@@ -11764,19 +11764,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      categories: []
+      categories: null
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     axios.post('/categories').then(function (response) {
-      _this.categories = response.data;
+      response.data.length > 0 ? _this.categories = response.data : null;
     });
   },
   methods: {
-    deleteCategory: function deleteCategory(id) {
-      axios["delete"]('/admin/category/' + id).then(function (response) {});
+    deleteCategory: function deleteCategory(id, index) {
+      var _this2 = this;
+
+      axios["delete"]('/admin/category/' + id).then(function (response) {
+        _this2.$delete(_this2.categories, index);
+      });
     }
   }
 });
@@ -44557,7 +44561,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#carousel-fade img{\n  height: 400px!important;\n}\n", ""]);
+exports.push([module.i, "\n#carousel-fade img{\r\n  height: 400px!important;\n}\r\n", ""]);
 
 // exports
 
@@ -77466,32 +77470,46 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "mt-5" }, [
-    _c("h2", { staticClass: "p-0" }, [_vm._v("Current Categories")]),
+    _vm.categories
+      ? _c("h4", { staticClass: "p-0 pt-4" }, [_vm._v("Current Categories")])
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row" },
+      { staticClass: "d-flex flex-column" },
       _vm._l(_vm.categories, function(item, index) {
-        return _c(
-          "div",
-          { key: index, staticClass: "col" },
-          [
-            _vm._v("\n          " + _vm._s(item.name) + "\n          "),
-            _c(
-              "b-button",
-              {
-                attrs: { variant: "main" },
-                on: {
-                  click: function($event) {
-                    return _vm.deleteCategory(item.id)
+        return _c("div", { key: index, staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-10" }, [_vm._v(_vm._s(item.name))]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "col-2 text-right" },
+            [
+              _c(
+                "b-button",
+                {
+                  directives: [
+                    {
+                      name: "b-popover",
+                      rawName: "v-b-popover.hover.left",
+                      value: "Delete category",
+                      expression: "'Delete category'",
+                      modifiers: { hover: true, left: true }
+                    }
+                  ],
+                  attrs: { id: index, variant: "main" },
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteCategory(item.id, index)
+                    }
                   }
-                }
-              },
-              [_vm._v("X")]
-            )
-          ],
-          1
-        )
+                },
+                [_vm._v("X")]
+              )
+            ],
+            1
+          )
+        ])
       }),
       0
     )
@@ -92557,8 +92575,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Programs\OSPanel\domains\Commerce\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Programs\OSPanel\domains\Commerce\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Program Files\OSPanel\domains\Commerce\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Program Files\OSPanel\domains\Commerce\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

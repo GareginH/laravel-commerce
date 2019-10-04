@@ -48,7 +48,7 @@ class CategoryController extends Controller
                 'name'=>$data['name'],
             ]);
         }
-        return redirect('admin/products');
+        return redirect('admin/category/create');
     }
 
     /**

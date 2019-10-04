@@ -1,10 +1,10 @@
 <template>
   <div class="mt-5">
-    <h2 class="p-0">Current Categories</h2>
-    <div class="row">
-        <div v-for="(item, index) in categories" :key="index" class="col">
-            {{item.name}}
-            <b-button variant="main" v-on:click="deleteCategory(item.id)">X</b-button>
+    <h4 class="p-0 pt-4" v-if="categories">Current Categories</h4>
+    <div class="d-flex flex-column">
+        <div v-for="(item, index) in categories" :key="index" class="row mb-2">
+            <div class="col-10">{{item.name}}</div>
+            <div class="col-2 text-right"><b-button :id="index" variant="main" v-on:click="deleteCategory(item.id, index)" v-b-popover.hover.left="'Delete category'">X</b-button></div>
         </div>
     </div>
   </div>
@@ -14,19 +14,23 @@
     export default {
         data(){
             return{
-                categories:[],
+                categories:null,
             }
         },
-        mounted() {
+        mounted() 
+        {
             axios.post('/categories').then(response=>
             {
-                this.categories = response.data;   
+                (response.data.length > 0) ? this.categories = response.data: null;
             })
         },
-        methods:{
-            deleteCategory(id){
+        methods:
+        {
+            deleteCategory(id, index){
                 axios.delete('/admin/category/'+id,).then(response=>{
+                    this.$delete(this.categories, index);
                 })
+                
             }
         }
     }
